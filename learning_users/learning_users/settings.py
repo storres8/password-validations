@@ -140,3 +140,9 @@ STATICFILES_DIRS = [
 # Media files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = MEDIA_DIR
+
+
+
+# login
+# points to the basic app folder in the templates directory 
+LOGIN_URL = '/basic_app/user_login'
