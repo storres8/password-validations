@@ -131,7 +131,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+# STATIC_URL used to refer to static files located in STATIC_ROOT and or STATIC_DIR.
 STATIC_URL = '/static/'
+# STATIC_DIRS is a setting that defines the additional locations the staticfiles app will transverse
 STATICFILES_DIRS = [
     STATIC_DIR,
 ]
@@ -144,5 +146,5 @@ MEDIA_ROOT = MEDIA_DIR
 
 
 # login
-# points to the basic app folder in the templates directory 
+# points to the basic app folder in the templates directory
 LOGIN_URL = '/basic_app/user_login'

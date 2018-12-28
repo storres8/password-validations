@@ -19,9 +19,18 @@
       <div class="navbar-nav">
         <a class="nav-item nav-link active" href="{% url 'index'%}">Home<span class="sr-only">(current)</span></a>
         <a class="nav-item nav-link" href="{% url 'admin:index' %}">Admin</a>
-        <a class="nav-item nav-link" href="{% url 'basic_app:register' %}">Register</a>
+
+        {% if user.is_authenticated %}
+          <a class="nav-item nav-link" href="{% url 'user_logout' %}">Logout</a>
+          <a class="nav-item nav-link" href="{% url 'basic_app:user_special' %}">Special</a>
+        {% else %}
+          <a class="nav-item nav-link" href="{% url 'basic_app:register' %}">Register</a>
+          <a class="nav-item nav-link" href="{% url 'basic_app:user_login' %}">Login</a>
+        {% endif %}
+
       </div>
     </div>
+
     </nav>
 
     <!-- Optional JavaScript -->

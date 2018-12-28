@@ -49,6 +49,10 @@ def register(request):
         })
 
 @login_required
+def user_special(request):
+    return render(request, 'basic_app/special.html',{})
+
+@login_required
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('index'))
@@ -62,7 +66,7 @@ def user_login(request):
         user = authenticate(username=username, password=password)
 
         if user:
-            if user.is_active():
+            if user.is_active:
                 login(request, user)
                 return HttpResponseRedirect(reverse('index'))
             else:
@@ -70,5 +74,6 @@ def user_login(request):
         else:
             print('Login attempt was failed')
             print(f'Username:{username} and Password:{password}')
+            return HttpResponse("invalid login details supplied.")
     else:
-        return render(reuqest, 'basic_app/login.html',{})
+        return render(request, 'basic_app/login.html',{})

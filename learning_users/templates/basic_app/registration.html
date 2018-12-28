@@ -17,7 +17,7 @@
   {% else %}
     <h3>Fill out the form to register:</h3>
     <p>
-
+      
     <form enctype="multipart/form-data" method="post">
       {% csrf_token%}
       {{user_form.as_p}}
